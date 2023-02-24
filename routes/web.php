@@ -26,7 +26,8 @@ Route::prefix('auth')->group(function() {
 
 Route::prefix('dashboard')->middleware('auth')->group(function() {
     Route::get('/', fn() => view('admin.dashbaord'));
-    Route::get('/article', fn() => view('admin.article'));
+    Route::get('/article', fn() => view('admin.article.index'));
+    
 });
 
 Route::any('{query}', fn() => redirect('/auth/login'));
