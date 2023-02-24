@@ -1,0 +1,25 @@
+artickel:
+  -id
+  -category_id
+  -user_id
+  -title
+  -slug
+  -image
+  -body
+
+category:
+  -id
+  -name
+
+comentar:
+  -id
+  -article_id
+  -user_id
+  -body
+
+user:
+  -id
+  -name
+  -email
+  -role
+  -password
