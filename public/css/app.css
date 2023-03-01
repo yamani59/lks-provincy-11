@@ -2,8 +2,32 @@
     height: 100vh;
 }
 
+.h-30-px {
+    height: 30px;
+}
+
+.h-20-vh {
+    height: 20vh;
+}
+
 .w-35-vh {
     width: 35vh;
+}
+
+.w-40-vh {
+    width: 40vh;
+}
+
+.w-30-px {
+    width: 30px;
+}
+
+.header-2 {
+    font-size: 24px;
+}
+
+.fs-12-px {
+    font-size: 12px;
 }
 
 .body-dashbaord {
@@ -21,6 +45,67 @@
 }
 
 .border-right {
-    border-right: 1px var(--bs-border-style)
-        var(--bs-border-color) !important;
+    border-right: 1px var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.hover\:bg-dark:hover {
+    transition: 0.3s ease-in;
+    background-color: var(--bs-gray-100) !important;
+}
+
+.circle {
+    border-radius: 200px;
+}
+
+.form-control:focus {
+    outline: none !important;
+    /* border: none !important; */
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    outline: none !important;
+    /* border: none !important; */
+    background: #ebebeb;
+    box-shadow: none !important;
+}
+
+.form-select:focus {
+    outline: none !important;
+    /* border: none !important; */
+    /* background: #ebebeb; */
+    box-shadow: none !important;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.column-count-3 {
+    column-count: 3;
+}
+
+.text-wrap-dot {
+    white-space: pre-line;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.hover\:shadow:hover {
+    transition: 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15) !important;
+}
+
+.mx-auto {
+    margin: 0 auto;
 }

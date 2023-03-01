@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticateController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,23 @@ Route::prefix('auth')->group(function() {
     });
 });
 
-Route::prefix('dashboard')->middleware('auth')->group(function() {
-    Route::get('/', fn() => view('admin.dashbaord'));
-    Route::get('/article', fn() => view('admin.article.index'));
-    
-});
+Route::middleware('auth')->group(function() {
+    Route::prefix('dashboard')->group(function() {
+        Route::middleware('role:writer')->group(function() {
+            Route::get('/', fn() => view('admin.dashbaord'));
+        });
+        Route::get('/article', [ArticleController::class, 'adminIndex']);
+        Route::get('/article/create', [ArticleController::class, 'create']);
+        Route::get('/article/{slug}/edit', [ArticleController::class, 'edit']);
+        Route::get('/categor', fn() => view('admin.category.index'));
+        Route::get('/category/create', fn() => view('admin.category.form'));
+        Route::get('/category/{slug}/edit', fn() => view('admin.category.form'));
+        Route::get('/command', fn() => view('admin.command.index'));
+    });
 
-Route::any('{query}', fn() => redirect('/auth/login'));
+    Route::prefix('article')->group(function() {
+        Route::post('/', [ArticleController::class, 'store']);
+        Route::patch('/{slug}', [ArticleController::class, 'update']);
+    });
+    Route::get('/{any}', fn() => redirect('/dashboaard'));
+});

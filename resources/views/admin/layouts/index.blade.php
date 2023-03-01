@@ -19,7 +19,7 @@
           <path
             d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
         </svg>
-        <a class="remove-style text-dark" href="/dashhboard/article">Article</a></span>
+        <a class="remove-style text-dark" href="/dashboard/article">Article</a></span>
     </div>
     <span class="d-flex pointer justify-content-evenly align-items-center mx-4">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -33,7 +33,7 @@
       </form>
     </span>
   </div>
-  <div class="bg-body-secondary body-dashbaord w-100">
+  <div class="bg-white body-dashbaord w-100">
     @yield('dashboard')
   </div>
 </div>

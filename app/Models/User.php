@@ -59,4 +59,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Command::class);
     }
+
+    /**
+     * Get role validasion
+     */
+    public function hasRole(String $role)
+    {
+        if (strpos($role, '|') !== false) {
+            return in_array($this->role, explode('|', $role));
+        } else {
+            return $this->role === $role;
+        }
+    }
 }
